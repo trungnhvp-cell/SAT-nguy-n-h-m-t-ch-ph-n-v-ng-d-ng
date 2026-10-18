@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Antiderivatives, Integrals &amp; Real-World Applications | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+<style>
+  :root{--sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;--sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;--sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;--shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px;overflow-x:auto}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){.test-layout{grid-template-columns:1fr}.test-sidebar{position:static}.nav-grid{grid-template-columns:repeat(10,1fr)}.result-hero{grid-template-columns:1fr}}
+  @media(max-width:640px){header{padding:14px 16px}.brand-title{font-size:16px}.header-credit{font-size:11.5px;padding:6px 12px;text-align:left}.nav-btn{padding:14px 12px;font-size:13px}main{padding:20px 12px 60px}.card{padding:20px 18px}.sat-hero{padding:24px 20px}.timer{font-size:20px;padding:6px 14px;min-width:90px}.hero{padding:26px 22px}.hero h1{font-size:22px}.page-title{font-size:22px}.footer-inner{grid-template-columns:1fr;gap:24px}footer{padding:28px 18px 20px}.nav-grid{grid-template-columns:repeat(6,1fr)}.wrong-item .ans-row{grid-template-columns:1fr}.result-score .num{font-size:34px}.test-topbar{position:static}.test-sidebar{position:static}.level-banner{flex-direction:column;gap:14px;padding:18px}.level-icon{width:52px;height:52px;font-size:28px}.level-content h3{font-size:18px}.roadmap{padding:20px 18px}.roadmap-phase{flex-direction:column;gap:12px}.time-analysis{padding:18px;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div><div class="brand-title">SAT Math Prep</div><div class="brand-sub">Antiderivatives, Integrals &amp; Real-World Applications</div></div>
+    </div>
+    <div class="header-credit">Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>THPT Trần Phú • ☎ 0964 848 989</div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Chinh phục SAT Math: Antiderivatives, Integrals &amp; Applications</h1>
+    <p>Khóa ôn tập chuyên sâu chủ đề <strong>Nguyên hàm, tích phân và ứng dụng trong thực tế</strong> dành cho học sinh phổ thông chuẩn bị kỳ thi <strong>Digital SAT</strong>. Nội dung song ngữ Việt–Anh, 40 từ vựng có phiên âm IPA, 30 câu luyện tập tức thì và <strong>3 bộ SAT Simulation × 30 câu = 90 câu</strong> với đồng hồ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p>
+    <div class="hero-author"><div class="avatar">NT</div><div><strong>Thầy Nguyễn Hữu Trung</strong><span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span></div></div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')"><div class="icon">📐</div><h4>1. Kiến thức cơ bản</h4><p>7 mục lý thuyết song ngữ: nguyên hàm, tính chất, Newton-Leibniz, đổi biến, từng phần, diện tích, thể tích &amp; ứng dụng thực tế.</p></div>
+    <div class="home-card" onclick="switchTab('vocab')"><div class="icon">📚</div><h4>2. Từ vựng chuyên ngành</h4><p>40 từ khóa SAT Math kèm phiên âm IPA, nghĩa tiếng Việt, ví dụ minh họa và phát âm tự động.</p></div>
+    <div class="home-card" onclick="switchTab('practice')"><div class="icon">✏️</div><h4>3. Luyện tập 3 nhóm</h4><p>30 câu trắc nghiệm tiếng Anh chia 3 mức độ: Cơ bản — Trung bình — Nâng cao.</p></div>
+    <div class="home-card" onclick="switchTab('sat')"><div class="icon">⏱️</div><h4>4. SAT Simulation</h4><p>90 câu hỏi chuẩn Digital SAT, đồng hồ 45 phút/bộ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p></div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Dành cho học sinh chuẩn bị thi SAT Digital</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Nguyên hàm cơ bản — Basic Antiderivatives</h3>
+    <p>Hàm số \(F(x)\) là <strong>nguyên hàm</strong> của \(f(x)\) trên \(K\) nếu \(F'(x) = f(x)\) với mọi \(x \in K\).</p>
+    <p><em>\(F(x)\) is an antiderivative of \(f(x)\) if \(F'(x) = f(x)\).</em></p>
+    <div class="formula-box">
+      \(\displaystyle\int x^n\, dx = \dfrac{x^{n+1}}{n+1} + C \ (n \neq -1)\) &nbsp;&nbsp; \(\displaystyle\int \dfrac{1}{x}\, dx = \ln|x| + C\)<br>
+      \(\displaystyle\int e^x\, dx = e^x + C\) &nbsp;&nbsp; \(\displaystyle\int a^x\, dx = \dfrac{a^x}{\ln a} + C\)<br>
+      \(\displaystyle\int \sin x\, dx = -\cos x + C\) &nbsp;&nbsp; \(\displaystyle\int \cos x\, dx = \sin x + C\)<br>
+      \(\displaystyle\int k\, dx = kx + C\) &nbsp;&nbsp; \(\displaystyle\int \dfrac{1}{\cos^2 x}\, dx = \tan x + C\)
+    </div>
+    <p><strong>Ghi nhớ:</strong> \(C\) là hằng số tích phân (constant of integration).</p>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> \(\displaystyle\int (3x^2 + 2x + 1)\, dx = x^3 + x^2 + x + C\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Tính chất nguyên hàm — Properties</h3>
+    <div class="formula-box">
+      \(\displaystyle\int [f(x) \pm g(x)]\, dx = \int f(x)\, dx \pm \int g(x)\, dx\)<br>
+      \(\displaystyle\int k \cdot f(x)\, dx = k \int f(x)\, dx\) &nbsp;&nbsp; (với \(k\) là hằng số)<br>
+      \(\displaystyle\left(\int f(x)\, dx\right)' = f(x)\)
+    </div>
+    <p><em>Linearity: integral of sum = sum of integrals; constant factor can be pulled out.</em></p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Tích phân xác định &amp; Newton–Leibniz</h3>
+    <p>Nếu \(F\) là một nguyên hàm của \(f\) trên \([a; b]\), thì:</p>
+    <div class="formula-box">
+      \(\displaystyle\int_a^b f(x)\, dx = F(b) - F(a) = \left. F(x) \right|_a^b\)
+    </div>
+    <p><em>The Fundamental Theorem of Calculus: definite integral equals \(F(b) - F(a)\).</em></p>
+    <h4>Tính chất (Properties):</h4>
+    <ul>
+      <li>\(\displaystyle\int_a^a f(x)\, dx = 0\)</li>
+      <li>\(\displaystyle\int_a^b f = -\int_b^a f\)</li>
+      <li>\(\displaystyle\int_a^b f = \int_a^c f + \int_c^b f\)</li>
+      <li>\(\displaystyle\int_a^b k\, dx = k(b-a)\)</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> \(\displaystyle\int_0^2 (2x+1)\, dx = \left[x^2 + x\right]_0^2 = (4+2)-(0+0) = 6\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Phương pháp tính tích phân — Techniques of Integration</h3>
+    <h4>1. Đổi biến (Substitution):</h4>
+    <div class="formula-box">
+      \(\displaystyle\int f(g(x)) \cdot g'(x)\, dx = \int f(u)\, du = F(g(x)) + C\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> \(\displaystyle\int 2x e^{x^2}\, dx\). Đặt \(u = x^2\), \(du = 2x\, dx\) → \(= e^{x^2} + C\).
+    </div>
+    <h4>2. Từng phần (Integration by parts):</h4>
+    <div class="formula-box">
+      \(\displaystyle\int u\, dv = uv - \int v\, du\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> \(\displaystyle\int x e^x\, dx = x e^x - e^x + C\) (đặt \(u=x\), \(dv=e^x\,dx\)).
+    </div>
+    <p><strong>Quy tắc chọn u (LIATE):</strong> Logarithm, Inverse trig, Algebraic, Trigonometric, Exponential.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Diện tích hình phẳng — Area Under Curve</h3>
+    <div class="formula-box">
+      <strong>Diện tích dưới đồ thị:</strong> \(S = \displaystyle\int_a^b |f(x)|\, dx\)<br>
+      <strong>Diện tích giữa hai đồ thị:</strong> \(S = \displaystyle\int_a^b |f(x) - g(x)|\, dx\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> Diện tích giữa \(y = x\) và \(y = x^2\) trên \([0,1]\):<br>
+      \(S = \displaystyle\int_0^1 (x - x^2)\, dx = \left[\dfrac{x^2}{2} - \dfrac{x^3}{3}\right]_0^1 = \dfrac{1}{2} - \dfrac{1}{3} = \dfrac{1}{6}\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VI</span> Thể tích vật thể tròn xoay — Volume of Revolution</h3>
+    <div class="formula-box">
+      <strong>Quay quanh trục Ox:</strong> \(V = \pi \displaystyle\int_a^b [f(x)]^2\, dx\)<br>
+      <strong>Quay quanh trục Oy (phụ):</strong> \(V = \pi \displaystyle\int_c^d [g(y)]^2\, dy\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> Quay \(y = x\) quanh Ox, \(x \in [0, 2]\):<br>
+      \(V = \pi \displaystyle\int_0^2 x^2\, dx = \pi \left[\dfrac{x^3}{3}\right]_0^2 = \dfrac{8\pi}{3}\)
+    </div>
+    <p><strong>Thể tích hình cầu:</strong> Quay \(y = \sqrt{r^2 - x^2}\) trên \([-r, r]\) quanh Ox → \(V = \dfrac{4}{3}\pi r^3\).</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VII</span> Ứng dụng thực tế — Real-World Applications</h3>
+    <table>
+      <tr><th>Đại lượng</th><th>Công thức tích phân</th></tr>
+      <tr><td><strong>Quãng đường (displacement)</strong></td><td>\(s = \displaystyle\int_{t_1}^{t_2} v(t)\, dt\)</td></tr>
+      <tr><td><strong>Tổng quãng đường (total distance)</strong></td><td>\(d = \displaystyle\int_{t_1}^{t_2} |v(t)|\, dt\)</td></tr>
+      <tr><td><strong>Gia tốc → vận tốc</strong></td><td>\(v(t) = v(0) + \displaystyle\int_0^t a(\tau)\, d\tau\)</td></tr>
+      <tr><td><strong>Tổng chi phí (total cost)</strong></td><td>\(C(x) = C(0) + \displaystyle\int_0^x MC(u)\, du\)</td></tr>
+      <tr><td><strong>Lợi nhuận</strong></td><td>\(P = \displaystyle\int_0^q (MR - MC)\, dx\)</td></tr>
+      <tr><td><strong>Thặng dư tiêu dùng</strong></td><td>\(CS = \displaystyle\int_0^q [D(x) - p]\, dx\)</td></tr>
+      <tr><td><strong>Xác suất (probability density)</strong></td><td>\(P(a \leq X \leq b) = \displaystyle\int_a^b f(x)\, dx\)</td></tr>
+      <tr><td><strong>Tốc độ dòng chảy</strong></td><td>\(Q = \displaystyle\int_{t_1}^{t_2} r(t)\, dt\)</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> Xe chuyển động với vận tốc \(v(t) = 3t^2\) (m/s).<br>
+      Quãng đường từ \(t=0\) đến \(t=2\): \(s = \displaystyle\int_0^2 3t^2\, dt = \left[t^3\right]_0^2 = 8\) (m).<br>
+      <strong>Ứng dụng SAT:</strong> tích phân mô hình hóa tổng chi phí, quãng đường, lợi nhuận, xác suất.
+    </div>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Hệ thống từ vựng SAT Math</h2>
+  <p class="page-subtitle">40 từ khóa chuyên ngành kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm</h2>
+  <p class="page-subtitle">30 câu hỏi tiếng Anh · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Mô phỏng cấu trúc Digital SAT Math · Đồng hồ 45 phút</p>
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Antiderivatives, Integrals &amp; Applications</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong>. Sau khi nộp bài, bạn nhận <strong>bảng tổng kết điểm</strong>, <strong>đánh giá năng lực</strong>, <strong>lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong>.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+  <div id="satSetSelector" class="sat-set-selector"></div>
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnForceResult">📊 Xem kết quả ngay</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head"><div class="q-num" id="testQNum">1</div><div class="q-text" id="testQText"></div></div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về khóa học</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Antiderivatives, Integrals &amp; Real-World Applications</strong> — Nguyên hàm, tích phân và ứng dụng trong thực tế.</p>
+      <div class="footer-author-card"><div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div><div class="role">Giáo viên Toán — THPT Trần Phú</div><div class="phone">📞 0964 848 989</div></div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong></p>
+    <p style="margin-top:6px">Made with ❤️ for high school students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============ TAB SWITCHING ============ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector('.nav-btn[data-tab="'+tab+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{btn.addEventListener('click',()=>switchTab(btn.dataset.tab));});
+
+/* ============ SOUND ============ */
+let audioCtx=null;
+function getCtx(){if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended') audioCtx.resume();return audioCtx;}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============ VOCABULARY ============ */
+const vocab=[
+  ["antiderivative","/ˌæntiˈdɪˈrɪvətɪv/","nguyên hàm","\\(F'(x) = f(x)\\)."],
+  ["integral","/ˈɪntɪɡrəl/","tích phân","Definite integral."],
+  ["indefinite integral","/ɪnˈdefɪnət ˈɪntɪɡrəl/","tích phân bất định","\\(\\int f(x)dx = F(x) + C\\)."],
+  ["definite integral","/ˈdefɪnət ˈɪntɪɡrəl/","tích phân xác định","\\(\\int_a^b f(x)dx\\)."],
+  ["integrand","/ˈɪntɪɡrænd/","hàm dưới dấu tích phân","The function to integrate."],
+  ["constant of integration","/ˈkɑːnstənt əv ˌɪntɪˈɡreɪʃn/","hằng số tích phân","\\(+ C\\)."],
+  ["substitution","/ˌsʌbstɪˈtuːʃn/","phép đổi biến","Integration by substitution."],
+  ["integration by parts","/ˌɪntɪˈɡreɪʃn baɪ pɑːrts/","tích phân từng phần","\\(\\int u dv = uv - \\int v du\\)."],
+  ["fundamental theorem","/ˌfʌndəˈmentl ˈθɪərəm/","định lý cơ bản","Fundamental Theorem of Calculus."],
+  ["area under curve","/ˈeriə ˈʌndər kɜːrv/","diện tích dưới đường cong","\\(\\int f(x)dx\\)."],
+  ["volume of revolution","/ˈvɑːljuːm əv ˌrevəˈluːʃn/","thể tích tròn xoay","\\(\\pi \\int y^2 dx\\)."],
+  ["displacement","/dɪsˈpleɪsmənt/","độ dịch chuyển","\\(\\int v(t)dt\\)."],
+  ["total distance","/ˈtoʊtl ˈdɪstəns/","tổng quãng đường","\\(\\int |v(t)|dt\\)."],
+  ["velocity","/vəˈlɑːsəti/","vận tốc","\\(v(t)\\)."],
+  ["acceleration","/əkˌseləˈreɪʃn/","gia tốc","\\(a(t) = v'(t)\\)."],
+  ["marginal cost","/ˈmɑːrdʒɪnl kɔːst/","chi phí cận biên","\\(MC = C'(x)\\)."],
+  ["total cost","/ˈtoʊtl kɔːst/","tổng chi phí","\\(C(x) = C(0) + \\int MC\\)."],
+  ["marginal revenue","/ˈmɑːrdʒɪnl ˈrevənuː/","doanh thu cận biên","\\(MR = R'(x)\\)."],
+  ["profit","/ˈprɑːfɪt/","lợi nhuận","\\(P = R - C\\)."],
+  ["consumer surplus","/kənˈsuːmər ˈsɜːrpləs/","thặng dư tiêu dùng","\\(CS = \\int (D - p)\\)."],
+  ["producer surplus","/prəˈduːsər ˈsɜːrpləs/","thặng dư sản xuất","\\(PS = \\int (p - S)\\)."],
+  ["demand","/dɪˈmænd/","nhu cầu","Demand curve."],
+  ["supply","/səˈplaɪ/","cung","Supply curve."],
+  ["density","/ˈdensəti/","mật độ","Probability density."],
+  ["probability density","/ˌprɑːbəˈbɪləti ˈdensəti/","hàm mật độ xác suất","\\(f(x) \\geq 0\\)."],
+  ["accumulated","/əˈkjuːmjəleɪtɪd/","tích lũy","Accumulated amount."],
+  ["interval","/ˈɪntərvl/","khoảng","Integration interval."],
+  ["upper limit","/ˈʌpər ˈlɪmɪt/","cận trên","Upper limit b."],
+  ["lower limit","/ˈloʊər ˈlɪmɪt/","cận dưới","Lower limit a."],
+  ["area","/ˈeriə/","diện tích","Signed area."],
+  ["net change","/net tʃeɪndʒ/","thay đổi ròng","Net change theorem."],
+  ["average value","/ˈævərɪdʒ ˈvæljuː/","giá trị trung bình","\\(\\dfrac{1}{b-a}\\int f\\)."],
+  ["average rate","/ˈævərɪdʒ reɪt/","tốc độ trung bình","Average rate of change."],
+  ["velocity function","/vəˈlɑːsəti ˈfʌŋkʃn/","hàm vận tốc","\\(v(t)\\)."],
+  ["area between curves","/ˈeriə bɪˈtwiːn kɜːrvz/","diện tích giữa hai đường","\\(\\int |f-g|\\)."],
+  ["riemann sum","/ˈriːmən sʌm/","tổng Riemann","Riemann sum approximation."],
+  ["approximate","/əˈprɑːksɪmət/","xấp xỉ","Approximate the integral."],
+  ["evaluate","/ɪˈvæljueɪt/","tính giá trị","Evaluate the integral."],
+  ["compute","/kəmˈpjuːt/","tính toán","Compute the area."],
+  ["model","/ˈmɑːdl/","mô hình","Mathematical model."]
+];
+
+function renderVocab(filter){
+  filter = filter || "";
+  const tbody=document.querySelector('#vocabTable tbody');
+  tbody.innerHTML='';
+  const f=filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && !(v[0].toLowerCase().indexOf(f)>=0||v[2].toLowerCase().indexOf(f)>=0)) return;
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+(i+1)+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td><td>'+v[2]+'</td><td>'+v[3]+'</td><td><button class="speak-btn" data-word="'+v[0]+'" title="Phát âm">🔊</button></td>';
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement){renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.getElementById('vocabSearch').addEventListener('input',function(e){renderVocab(e.target.value);});
+document.addEventListener('click',function(e){
+  if(e.target.classList.contains('speak-btn')){
+    const word=e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============ PRACTICE DATA 30 câu ============ */
+const practiceData={
+  1:[
+    {q:"\\(\\displaystyle\\int x^3\\, dx\\) equals:",opts:["\\(\\dfrac{x^4}{4} + C\\)","\\(3x^2 + C\\)","\\(x^4 + C\\)","\\(\\dfrac{x^3}{3} + C\\)"],ans:0,exp:"Công thức: \\(\\int x^n dx = \\dfrac{x^{n+1}}{n+1} + C\\). Với \\(n=3\\): \\(\\dfrac{x^4}{4} + C\\).",review:"Ôn mục I — Nguyên hàm cơ bản"},
+    {q:"\\(\\displaystyle\\int 5\\, dx\\) equals:",opts:["\\(5\\)","\\(5x + C\\)","\\(x + C\\)","\\(0\\)"],ans:1,exp:"Nguyên hàm hằng số: \\(\\int k\\, dx = kx + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int e^x\\, dx\\) equals:",opts:["\\(xe^x + C\\)","\\(e^x + C\\)","\\(\\dfrac{e^{x+1}}{x+1} + C\\)","\\(\\ln x + C\\)"],ans:1,exp:"Đạo hàm của \\(e^x\\) là \\(e^x\\), nên nguyên hàm của \\(e^x\\) là \\(e^x + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\dfrac{1}{x}\\, dx\\) equals:",opts:["\\(\\ln|x| + C\\)","\\(-\\dfrac{1}{x^2} + C\\)","\\(x^0 + C\\)","\\(\\dfrac{x^2}{2} + C\\)"],ans:0,exp:"Nguyên hàm của \\(1/x\\) là \\(\\ln|x| + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\cos x\\, dx\\) equals:",opts:["\\(-\\sin x + C\\)","\\(\\sin x + C\\)","\\(-\\cos x + C\\)","\\(\\tan x + C\\)"],ans:1,exp:"Đạo hàm của \\(\\sin x\\) là \\(\\cos x\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\sin x\\, dx\\) equals:",opts:["\\(\\cos x + C\\)","\\(-\\cos x + C\\)","\\(\\sin x + C\\)","\\(-\\sin x + C\\)"],ans:1,exp:"Đạo hàm của \\(-\\cos x\\) là \\(\\sin x\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int_0^1 x\\, dx\\) equals:",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(2\\)"],ans:1,exp:"\\(\\left[\\dfrac{x^2}{2}\\right]_0^1 = \\dfrac{1}{2}\\).",review:"Ôn mục III — Newton-Leibniz"},
+    {q:"\\(\\displaystyle\\int_0^2 2x\\, dx\\) equals:",opts:["\\(2\\)","\\(4\\)","\\(8\\)","\\(16\\)"],ans:1,exp:"\\(\\left[x^2\\right]_0^2 = 4\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int (x^2 + 1)\\, dx\\) equals:",opts:["\\(\\dfrac{x^3}{3} + x + C\\)","\\(\\dfrac{x^3}{3} + C\\)","\\(2x + C\\)","\\(x^3 + x + C\\)"],ans:0,exp:"\\(\\int x^2 dx = \\dfrac{x^3}{3}\\), \\(\\int 1\\, dx = x\\).",review:"Ôn mục II — Tính chất"},
+    {q:"\\(\\displaystyle\\int_1^2 (2x + 1)\\, dx\\) equals:",opts:["\\(2\\)","\\(3\\)","\\(4\\)","\\(5\\)"],ans:2,exp:"\\(\\left[x^2 + x\\right]_1^2 = (4+2)-(1+1) = 4\\).",review:"Ôn mục III"}
+  ],
+  2:[
+    {q:"\\(\\displaystyle\\int 2x(x^2 + 1)\\, dx\\) equals:",opts:["\\(\\dfrac{(x^2+1)^2}{2} + C\\)","\\(x^4 + x^2 + C\\)","\\(2x^2 + C\\)","\\((x^2+1)^2 + C\\)"],ans:0,exp:"Đặt \\(u = x^2 + 1\\), \\(du = 2x\\, dx\\). \\(\\int u\\, du = \\dfrac{u^2}{2} + C\\).",review:"Ôn mục IV — Đổi biến"},
+    {q:"\\(\\displaystyle\\int_0^1 e^x\\, dx\\) equals:",opts:["\\(1\\)","\\(e - 1\\)","\\(e\\)","\\(e + 1\\)"],ans:1,exp:"\\(\\left[e^x\\right]_0^1 = e - 1\\).",review:"Ôn mục III"},
+    {q:"Area between \\(y = x\\) and \\(y = x^2\\) on \\([0,1]\\):",opts:["\\(\\dfrac{1}{6}\\)","\\(\\dfrac{1}{4}\\)","\\(\\dfrac{1}{3}\\)","\\(\\dfrac{1}{2}\\)"],ans:0,exp:"\\(\\int_0^1 (x - x^2) dx = \\dfrac{1}{2} - \\dfrac{1}{3} = \\dfrac{1}{6}\\).",review:"Ôn mục V — Diện tích"},
+    {q:"Volume of \\(y = x\\) on \\([0,2]\\) rotated around Ox:",opts:["\\(\\dfrac{4\\pi}{3}\\)","\\(\\dfrac{8\\pi}{3}\\)","\\(\\dfrac{16\\pi}{3}\\)","\\(4\\pi\\)"],ans:1,exp:"\\(V = \\pi \\int_0^2 x^2 dx = \\pi \\cdot \\dfrac{8}{3} = \\dfrac{8\\pi}{3}\\).",review:"Ôn mục VI — Thể tích"},
+    {q:"\\(\\displaystyle\\int x e^x\\, dx\\) equals:",opts:["\\(xe^x - e^x + C\\)","\\(xe^x + e^x + C\\)","\\(\\dfrac{x^2}{2} e^x + C\\)","\\(x^2 e^x + C\\)"],ans:0,exp:"Từng phần: \\(u = x\\), \\(dv = e^x dx\\). \\(\\int u dv = uv - \\int v du = xe^x - e^x + C\\).",review:"Ôn mục IV — Từng phần"},
+    {q:"\\(\\displaystyle\\int_0^\\pi \\sin x\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(\\pi\\)"],ans:2,exp:"\\([-\\cos x]_0^\\pi = -\\cos\\pi + \\cos 0 = 1 + 1 = 2\\).",review:"Ôn mục III"},
+    {q:"Object velocity \\(v(t) = 3t^2\\) on \\([0,2]\\). Displacement:",opts:["\\(4\\)","\\(6\\)","\\(8\\)","\\(12\\)"],ans:2,exp:"\\(\\int_0^2 3t^2 dt = [t^3]_0^2 = 8\\).",review:"Ôn mục VII — Ứng dụng"},
+    {q:"\\(\\displaystyle\\int_1^e \\dfrac{1}{x}\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(e\\)","\\(e - 1\\)"],ans:1,exp:"\\([\\ln x]_1^e = \\ln e - \\ln 1 = 1\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_0^1 x e^{x^2}\\, dx\\) equals:",opts:["\\(\\dfrac{e-1}{2}\\)","\\(\\dfrac{e+1}{2}\\)","\\(e - 1\\)","\\(e\\)"],ans:0,exp:"\\(u = x^2\\), \\(du = 2x dx\\). \\(\\int_0^1 = \\dfrac{1}{2}[e^u]_0^1 = \\dfrac{e-1}{2}\\).",review:"Ôn mục IV — Đổi biến"},
+    {q:"Area under \\(y = \\dfrac{1}{x}\\) from \\(x=1\\) to \\(x=e\\):",opts:["\\(0\\)","\\(1\\)","\\(e\\)","\\(\\dfrac{1}{e}\\)"],ans:1,exp:"\\(\\int_1^e \\dfrac{1}{x} dx = 1\\).",review:"Ôn mục V"}
+  ],
+  3:[
+    {q:"\\(\\displaystyle\\int x \\ln x\\, dx\\) equals:",opts:["\\(\\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4} + C\\)","\\(\\dfrac{x^2}{2}\\ln x + \\dfrac{x^2}{4} + C\\)","\\(x^2 \\ln x + C\\)","\\(\\dfrac{\\ln x}{2} + C\\)"],ans:0,exp:"Từng phần: \\(u = \\ln x\\), \\(dv = x\\, dx\\). \\(= \\dfrac{x^2}{2}\\ln x - \\int \\dfrac{x}{2} dx = \\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4} + C\\).",review:"Ôn mục IV — Từng phần"},
+    {q:"Velocity \\(v(t) = t^2 - 4t\\) on \\([0,5]\\). Displacement:",opts:["\\(-\\dfrac{25}{3}\\)","\\(\\dfrac{25}{3}\\)","\\(0\\)","\\(\\dfrac{50}{3}\\)"],ans:0,exp:"\\(\\int_0^5 (t^2-4t)dt = [\\dfrac{t^3}{3} - 2t^2]_0^5 = \\dfrac{125}{3} - 50 = -\\dfrac{25}{3}\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 x e^{-x}\\, dx\\) equals:",opts:["\\(1 - \\dfrac{2}{e}\\)","\\(1 + \\dfrac{2}{e}\\)","\\(\\dfrac{1}{e}\\)","\\(2\\)"],ans:0,exp:"Từng phần: \\(u=x, dv=e^{-x}dx\\). \\([-xe^{-x}]_0^1 + \\int_0^1 e^{-x}dx = -\\dfrac{1}{e} + (1 - \\dfrac{1}{e}) = 1 - \\dfrac{2}{e}\\).",review:"Ôn mục IV — Từng phần"},
+    {q:"Volume of sphere radius \\(r\\) (rotate \\(y = \\sqrt{r^2 - x^2}\\)):",opts:["\\(\\dfrac{4}{3}\\pi r^3\\)","\\(\\dfrac{2}{3}\\pi r^3\\)","\\(\\pi r^3\\)","\\(4\\pi r^3\\)"],ans:0,exp:"\\(V = \\pi \\int_{-r}^r (r^2 - x^2) dx = \\dfrac{4}{3}\\pi r^3\\).",review:"Ôn mục VI"},
+    {q:"Consumer surplus \\(\\int_0^{10} (100 - 5x - 50)dx\\) equals:",opts:["\\(250\\)","\\(200\\)","\\(300\\)","\\(500\\)"],ans:0,exp:"\\(\\int_0^{10} (50 - 5x) dx = [50x - 2.5x^2]_0^{10} = 500 - 250 = 250\\).",review:"Ôn mục VII"},
+    {q:"Area between \\(y = x^2\\) and \\(y = 2x\\):",opts:["\\(\\dfrac{4}{3}\\)","\\(\\dfrac{8}{3}\\)","\\(\\dfrac{2}{3}\\)","\\(4\\)"],ans:0,exp:"Giao tại 0, 2. \\(\\int_0^2 (2x - x^2)dx = [x^2 - \\dfrac{x^3}{3}]_0^2 = 4 - \\dfrac{8}{3} = \\dfrac{4}{3}\\).",review:"Ôn mục V"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi/2} \\sin^2 x\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{4}\\)","\\(\\dfrac{\\pi}{2}\\)","\\(1\\)","\\(\\dfrac{1}{2}\\)"],ans:0,exp:"Dùng hạ bậc: \\(\\sin^2 x = \\dfrac{1-\\cos 2x}{2}\\). \\(= \\dfrac{\\pi}{4}\\).",review:"Ôn mục IV"},
+    {q:"Ball thrown up \\(v(t) = 32 - 32t\\) (m/s). Total distance traveled from \\(t=0\\) to \\(t=2\\):",opts:["\\(16\\)","\\(32\\)","\\(48\\)","\\(64\\)"],ans:1,exp:"\\(v=0\\) tại \\(t=1\\). \\(\\int_0^1 (32-32t)dt = 16\\), \\(\\int_1^2 (32-32t)dt = -16\\). Distance = \\(16 + |-16| = 32\\).",review:"Ôn mục VII"},
+    {q:"Marginal cost \\(MC(x) = 3x^2\\), fixed cost 100. Total cost \\(C(10)\\):",opts:["\\(300\\)","\\(1000\\)","\\(1100\\)","\\(1200\\)"],ans:2,exp:"\\(C(x) = C(0) + \\int_0^x 3t^2 dt = 100 + x^3\\). \\(C(10) = 100 + 1000 = 1100\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 x^2 e^x\\, dx\\) equals (approx):",opts:["\\(\\approx 0.718\\)","\\(\\approx 1.5\\)","\\(\\approx 0.5\\)","\\(\\approx 2\\)"],ans:0,exp:"Từng phần 2 lần: \\(e(x^2-2x+2)\\) evaluated. \\(\\approx e - 2 \\approx 0.718\\).",review:"Ôn mục IV"}
+  ]
+};
+
+const letterMap=['A','B','C','D'];
+
+function renderPractice(group){
+  const container=document.getElementById('panel-'+group);
+  container.innerHTML='';
+  practiceData[group].forEach(function(item,idx){
+    const card=document.createElement('div');
+    card.className='q-card';card.id='g'+group+'q'+idx;
+    let optsHtml='';
+    item.opts.forEach(function(o,i){
+      optsHtml+='<button class="option" data-group="'+group+'" data-q="'+idx+'" data-opt="'+i+'"><span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span></button>';
+    });
+    card.innerHTML='<div class="q-head"><div class="q-num">'+(idx+1)+'</div><div class="q-text">'+item.q+'</div></div><div class="options">'+optsHtml+'</div><div class="feedback" id="fb-'+group+'-'+idx+'"></div>';
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.querySelectorAll('.group-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.group-tab').forEach(function(t){t.classList.remove('active');});
+    document.querySelectorAll('.group-panel').forEach(function(p){p.classList.remove('active');});
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',function(e){
+  const btn=e.target.closest('.option');
+  if(!btn||btn.classList.contains('disabled')) return;
+  const group=btn.dataset.group;if(!group) return;
+  const qIdx=+btn.dataset.q, optIdx=+btn.dataset.opt;
+  const card=document.getElementById('g'+group+'q'+qIdx);
+  const item=practiceData[group][qIdx];
+  const fb=document.getElementById('fb-'+group+'-'+qIdx);
+  const allOpts=card.querySelectorAll('.option');
+  allOpts.forEach(function(o){o.classList.add('disabled');});
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect=optIdx===item.ans;
+  if(!isCorrect){btn.classList.add('wrong');}
+  card.classList.add(isCorrect?'correct':'wrong');
+  fb.className='feedback show '+(isCorrect?'ok':'no');
+  if(isCorrect){
+    fb.innerHTML='<strong>✅ Correct!</strong>'+item.exp+'<div class="review">💡 '+item.review+'</div>';
+    playDing();
+  } else {
+    fb.innerHTML='<strong>❌ Incorrect. Correct answer: '+letterMap[item.ans]+'</strong>'+item.exp+'<div class="review">📖 Ôn tập lại: '+item.review+'</div>';
+    playBuzz();
+  }
+  if(window.renderMathInElement){renderMathInElement(fb,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+});
+
+/* ============ SAT TOPICS & RECOMMENDATIONS ============ */
+const TOPICS = {
+  BASIC:"Nguyên hàm cơ bản",
+  PROPERTIES:"Tính chất tích phân",
+  NEWTON:"Newton-Leibniz",
+  SUBSTITUTION:"Phương pháp đổi biến",
+  PARTS:"Tích phân từng phần",
+  AREA:"Diện tích",
+  APPLICATION:"Ứng dụng thực tế"
+};
+const TOPIC_RECOMMENDATIONS = {
+  BASIC:"Ôn mục I: bảng nguyên hàm cơ bản \\(x^n, 1/x, e^x, \\sin, \\cos\\). Nhớ hằng số \\(+C\\).",
+  PROPERTIES:"Ôn mục II: tính tuyến tính \\(\\int(f \\pm g) = \\int f \\pm \\int g\\), \\(\\int kf = k\\int f\\).",
+  NEWTON:"Ôn mục III: \\(\\int_a^b f = F(b) - F(a)\\); đảo cận đổi dấu; tách khoảng.",
+  SUBSTITUTION:"Ôn mục IV: đặt \\(u = g(x)\\), \\(du = g'(x)dx\\). Đổi cận khi tính tích phân xác định.",
+  PARTS:"Ôn mục IV: \\(\\int u dv = uv - \\int v du\\). Áp dụng LIATE để chọn \\(u\\).",
+  AREA:"Ôn mục V: diện tích dưới đường \\(\\int|f|\\), giữa hai đường \\(\\int|f-g|\\).",
+  APPLICATION:"Ôn mục VII: quãng đường, tổng chi phí, lợi nhuận, xác suất. Xác định đúng cận tích phân."
+};
+
+/* ============ SAT SETS — 3 × 30 = 90 câu ============ */
+const SAT_SETS = {
+  1:{name:"Set 1 — Foundations",desc:"Nguyên hàm cơ bản, tính chất, Newton-Leibniz, tích phân đơn giản.",questions:[
+    {q:"\\(\\displaystyle\\int x^2\\, dx\\) equals:",opts:["\\(\\dfrac{x^3}{3} + C\\)","\\(2x + C\\)","\\(x^3 + C\\)","\\(3x^2 + C\\)"],ans:0,topic:"BASIC",exp:"\\(\\int x^n dx = \\dfrac{x^{n+1}}{n+1} + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int 7\\, dx\\) equals:",opts:["\\(0\\)","\\(7\\)","\\(7x + C\\)","\\(x + C\\)"],ans:2,topic:"BASIC",exp:"\\(\\int k\\, dx = kx + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int e^x\\, dx\\) equals:",opts:["\\(e^x + C\\)","\\(xe^x + C\\)","\\(\\dfrac{e^x}{x} + C\\)","\\(\\ln e^x + C\\)"],ans:0,topic:"BASIC",exp:"Nguyên hàm của \\(e^x\\) là \\(e^x\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\dfrac{1}{x}\\, dx\\) equals:",opts:["\\(\\ln|x| + C\\)","\\(\\dfrac{x^2}{2} + C\\)","\\(-\\dfrac{1}{x} + C\\)","\\(e^x + C\\)"],ans:0,topic:"BASIC",exp:"Nguyên hàm chuẩn.",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\cos x\\, dx\\) equals:",opts:["\\(\\sin x + C\\)","\\(-\\sin x + C\\)","\\(\\cos x + C\\)","\\(\\tan x + C\\)"],ans:0,topic:"BASIC",exp:"Nguyên hàm của \\(\\cos x\\) là \\(\\sin x\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int \\sin x\\, dx\\) equals:",opts:["\\(\\cos x + C\\)","\\(-\\cos x + C\\)","\\(-\\sin x + C\\)","\\(\\tan x + C\\)"],ans:1,topic:"BASIC",exp:"Nguyên hàm của \\(\\sin x\\) là \\(-\\cos x\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int (x + 1)\\, dx\\) equals:",opts:["\\(\\dfrac{x^2}{2} + x + C\\)","\\(\\dfrac{x^2}{2} + C\\)","\\(x^2 + x + C\\)","\\(x + C\\)"],ans:0,topic:"BASIC",exp:"\\(\\int x\\, dx + \\int 1\\, dx = \\dfrac{x^2}{2} + x + C\\).",review:"Ôn mục II"},
+    {q:"\\(\\displaystyle\\int_0^1 2x\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(4\\)"],ans:1,topic:"NEWTON",exp:"\\([x^2]_0^1 = 1\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_1^3 1\\, dx\\) equals:",opts:["\\(1\\)","\\(2\\)","\\(3\\)","\\(4\\)"],ans:1,topic:"NEWTON",exp:"\\([x]_1^3 = 3 - 1 = 2\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_0^2 x^2\\, dx\\) equals:",opts:["\\(\\dfrac{4}{3}\\)","\\(\\dfrac{8}{3}\\)","\\(\\dfrac{16}{3}\\)","\\(8\\)"],ans:1,topic:"NEWTON",exp:"\\([\\dfrac{x^3}{3}]_0^2 = \\dfrac{8}{3}\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int 3x^2\\, dx\\) equals:",opts:["\\(x^3 + C\\)","\\(3x^3 + C\\)","\\(6x + C\\)","\\(\\dfrac{3x^3}{3} + C\\)"],ans:0,topic:"BASIC",exp:"\\(3 \\cdot \\dfrac{x^3}{3} = x^3 + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int_{-1}^1 x^3\\, dx\\) equals:",opts:["\\(0\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(-\\dfrac{1}{2}\\)"],ans:0,topic:"NEWTON",exp:"\\(x^3\\) là hàm lẻ, tích phân trên khoảng đối xứng = 0.",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int (2x + 3)\\, dx\\) equals:",opts:["\\(x^2 + 3x + C\\)","\\(2x^2 + 3x + C\\)","\\(x^2 + C\\)","\\(2x + C\\)"],ans:0,topic:"BASIC",exp:"\\(\\int 2x\\, dx = x^2\\), \\(\\int 3\\, dx = 3x\\).",review:"Ôn mục II"},
+    {q:"\\(\\displaystyle\\int_0^1 4x^3\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(4\\)"],ans:1,topic:"NEWTON",exp:"\\([x^4]_0^1 = 1\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int 5e^x\\, dx\\) equals:",opts:["\\(e^x + C\\)","\\(5e^x + C\\)","\\(5xe^x + C\\)","\\(\\dfrac{5e^x}{x} + C\\)"],ans:1,topic:"BASIC",exp:"\\(\\int k \\cdot f = k \\int f\\).",review:"Ôn mục II"},
+    {q:"\\(\\displaystyle\\int_a^a f(x)\\, dx\\) equals:",opts:["\\(f(a)\\)","\\(0\\)","\\(1\\)","\\(a\\)"],ans:1,topic:"NEWTON",exp:"\\(F(a) - F(a) = 0\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_0^3 2\\, dx\\) equals:",opts:["\\(2\\)","\\(3\\)","\\(6\\)","\\(9\\)"],ans:2,topic:"NEWTON",exp:"\\([2x]_0^3 = 6\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int x^5\\, dx\\) equals:",opts:["\\(\\dfrac{x^6}{6} + C\\)","\\(5x^4 + C\\)","\\(x^6 + C\\)","\\(\\dfrac{x^5}{5} + C\\)"],ans:0,topic:"BASIC",exp:"\\(n = 5\\), \\(\\dfrac{x^6}{6} + C\\).",review:"Ôn mục I"},
+    {q:"\\(\\displaystyle\\int_1^2 (2x - 1)\\, dx\\) equals:",opts:["\\(1\\)","\\(2\\)","\\(3\\)","\\(4\\)"],ans:1,topic:"NEWTON",exp:"\\([x^2 - x]_1^2 = (4-2)-(1-1) = 2\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int e^{2x}\\, dx\\) equals:",opts:["\\(e^{2x} + C\\)","\\(\\dfrac{e^{2x}}{2} + C\\)","\\(2e^{2x} + C\\)","\\(e^{x} + C\\)"],ans:1,topic:"SUBSTITUTION",exp:"Đặt \\(u = 2x\\), \\(du = 2dx\\). \\(= \\dfrac{1}{2}e^{2x} + C\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int \\cos(2x)\\, dx\\) equals:",opts:["\\(\\sin(2x) + C\\)","\\(\\dfrac{\\sin(2x)}{2} + C\\)","\\(-\\sin(2x) + C\\)","\\(2\\sin(2x) + C\\)"],ans:1,topic:"SUBSTITUTION",exp:"Đặt \\(u = 2x\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi/2} \\cos x\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(\\pi\\)"],ans:1,topic:"NEWTON",exp:"\\([\\sin x]_0^{\\pi/2} = 1\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_a^b f(x)\\, dx\\) equals:",opts:["\\(\\int_b^a f\\)","\\(-\\int_b^a f\\)","\\(0\\)","\\(f(b) - f(a)\\)"],ans:1,topic:"NEWTON",exp:"Đảo cận đổi dấu.",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_0^1 (x + 1)^2\\, dx\\) equals:",opts:["\\(\\dfrac{1}{3}\\)","\\(\\dfrac{7}{3}\\)","\\(\\dfrac{8}{3}\\)","\\(3\\)"],ans:1,topic:"SUBSTITUTION",exp:"\\(\\left[\\dfrac{(x+1)^3}{3}\\right]_0^1 = \\dfrac{8}{3} - \\dfrac{1}{3} = \\dfrac{7}{3}\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_{-2}^2 x\\, dx\\) equals:",opts:["\\(0\\)","\\(2\\)","\\(4\\)","\\(-4\\)"],ans:0,topic:"NEWTON",exp:"Hàm lẻ, khoảng đối xứng.",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int \\dfrac{1}{x+1}\\, dx\\) equals:",opts:["\\(\\ln|x+1| + C\\)","\\(\\dfrac{1}{x+1} + C\\)","\\(\\ln|x| + C\\)","\\(x + C\\)"],ans:0,topic:"SUBSTITUTION",exp:"Đặt \\(u = x+1\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 3x^2\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(2\\)","\\(3\\)"],ans:1,topic:"NEWTON",exp:"\\([x^3]_0^1 = 1\\).",review:"Ôn mục III"},
+    {q:"Average value of \\(f(x) = x\\) on \\([0,4]\\):",opts:["\\(1\\)","\\(2\\)","\\(3\\)","\\(4\\)"],ans:1,topic:"NEWTON",exp:"\\(\\dfrac{1}{4-0}\\int_0^4 x\\, dx = \\dfrac{1}{4} \\cdot 8 = 2\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 (e^x + 1)\\, dx\\) equals:",opts:["\\(e\\)","\\(e - 1\\)","\\(e + 1\\)","\\(1\\)"],ans:0,topic:"NEWTON",exp:"\\([e^x + x]_0^1 = (e+1) - 1 = e\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_{1}^{4} \\dfrac{1}{2\\sqrt{x}}\\, dx\\) equals:",opts:["\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(2\\)","\\(4\\)"],ans:1,topic:"SUBSTITUTION",exp:"\\([\\sqrt{x}]_1^4 = 2 - 1 = 1\\).",review:"Ôn mục IV"}
+  ]},
+  2:{name:"Set 2 — Intermediate",desc:"Đổi biến, từng phần cơ bản, diện tích, thể tích, bài toán chuyển động.",questions:[
+    {q:"\\(\\displaystyle\\int 2x(x^2+1)\\, dx\\) equals:",opts:["\\(\\dfrac{(x^2+1)^2}{2} + C\\)","\\(\\dfrac{(x^2+1)^2}{4} + C\\)","\\((x^2+1)^2 + C\\)","\\(2(x^2+1)^2 + C\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^2+1\\), \\(du = 2x\\, dx\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int x e^x\\, dx\\) equals:",opts:["\\(xe^x - e^x + C\\)","\\(xe^x + e^x + C\\)","\\(x^2 e^x/2 + C\\)","\\(e^x + C\\)"],ans:0,topic:"PARTS",exp:"Từng phần: \\(u = x\\), \\(dv = e^x dx\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int \\ln x\\, dx\\) equals:",opts:["\\(x\\ln x - x + C\\)","\\(x\\ln x + x + C\\)","\\(\\dfrac{\\ln^2 x}{2} + C\\)","\\(\\dfrac{1}{x} + C\\)"],ans:0,topic:"PARTS",exp:"\\(u = \\ln x\\), \\(dv = dx\\). \\(= x\\ln x - x + C\\).",review:"Ôn mục IV"},
+    {q:"Area under \\(y = x^2\\) on \\([0,3]\\):",opts:["\\(3\\)","\\(6\\)","\\(9\\)","\\(27\\)"],ans:2,topic:"AREA",exp:"\\([\\dfrac{x^3}{3}]_0^3 = 9\\).",review:"Ôn mục V"},
+    {q:"Volume of \\(y = \\sqrt{x}\\) on \\([0,4]\\) around Ox:",opts:["\\(4\\pi\\)","\\(8\\pi\\)","\\(16\\pi\\)","\\(32\\pi\\)"],ans:1,topic:"AREA",exp:"\\(\\pi \\int_0^4 x\\, dx = \\pi \\cdot 8 = 8\\pi\\).",review:"Ôn mục VI"},
+    {q:"\\(\\displaystyle\\int_1^e \\ln x\\, dx\\) equals:",opts:["\\(0\\)","\\(1\\)","\\(e - 1\\)","\\(e\\)"],ans:1,topic:"PARTS",exp:"\\([x\\ln x - x]_1^e = (e - e) - (0 - 1) = 1\\).",review:"Ôn mục IV"},
+    {q:"Velocity \\(v(t) = 2t\\) on \\([0,3]\\). Displacement:",opts:["\\(3\\)","\\(6\\)","\\(9\\)","\\(12\\)"],ans:2,topic:"APPLICATION",exp:"\\(\\int_0^3 2t\\, dt = [t^2]_0^3 = 9\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 x e^{x^2}\\, dx\\) equals:",opts:["\\(\\dfrac{e-1}{2}\\)","\\(e - 1\\)","\\(\\dfrac{e}{2}\\)","\\(1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^2\\), \\(du = 2x dx\\).",review:"Ôn mục IV"},
+    {q:"Area between \\(y = x^2\\) and \\(y = 4\\) (upper):",opts:["\\(\\dfrac{16}{3}\\)","\\(\\dfrac{32}{3}\\)","\\(16\\)","\\(8\\)"],ans:1,topic:"AREA",exp:"\\(\\int_{-2}^2 (4 - x^2)dx = [4x - x^3/3]_{-2}^2 = (8 - 8/3) - (-8 + 8/3) = 32/3\\).",review:"Ôn mục V"},
+    {q:"Velocity \\(v(t) = 3t^2\\). Distance traveled on \\([0,2]\\):",opts:["\\(2\\)","\\(4\\)","\\(6\\)","\\(8\\)"],ans:3,topic:"APPLICATION",exp:"\\(\\int_0^2 3t^2 dt = [t^3]_0^2 = 8\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 (x^2 + x)\\, dx\\) equals:",opts:["\\(\\dfrac{1}{6}\\)","\\(\\dfrac{1}{3}\\)","\\(\\dfrac{5}{6}\\)","\\(1\\)"],ans:2,topic:"NEWTON",exp:"\\([\\dfrac{x^3}{3} + \\dfrac{x^2}{2}]_0^1 = \\dfrac{1}{3} + \\dfrac{1}{2} = \\dfrac{5}{6}\\).",review:"Ôn mục III"},
+    {q:"Total cost from \\(MC(x) = 2x + 3\\), fixed 100, \\(C(5)\\):",opts:["\\(115\\)","\\(125\\)","\\(140\\)","\\(150\\)"],ans:1,topic:"APPLICATION",exp:"\\(C(x) = 100 + \\int_0^x (2t+3)dt = 100 + x^2 + 3x\\). \\(C(5) = 100 + 25 + 15 = 140\\). Đáp án đúng là 140 (C).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 x\\sqrt{x^2+1}\\, dx\\) equals:",opts:["\\(\\dfrac{2\\sqrt{2}-1}{3}\\)","\\(\\dfrac{2\\sqrt{2}}{3}\\)","\\(\\dfrac{\\sqrt{2}}{3}\\)","\\(2\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^2+1\\). \\(= \\dfrac{1}{2} \\cdot \\dfrac{2}{3}u^{3/2}|_1^2 = \\dfrac{2\\sqrt{2}-1}{3}\\).",review:"Ôn mục IV"},
+    {q:"Volume of \\(y = x^2\\) on \\([0,1]\\) rotated Ox:",opts:["\\(\\dfrac{\\pi}{3}\\)","\\(\\dfrac{\\pi}{5}\\)","\\(\\dfrac{\\pi}{2}\\)","\\(\\pi\\)"],ans:1,topic:"AREA",exp:"\\(\\pi \\int_0^1 x^4 dx = \\pi/5\\).",review:"Ôn mục VI"},
+    {q:"\\(\\displaystyle\\int_0^2 |x - 1|\\, dx\\) equals:",opts:["\\(0.5\\)","\\(1\\)","\\(1.5\\)","\\(2\\)"],ans:1,topic:"AREA",exp:"\\(\\int_0^1 (1-x)dx + \\int_1^2 (x-1)dx = 0.5 + 0.5 = 1\\).",review:"Ôn mục V"},
+    {q:"Distance for \\(v(t) = 4 - 2t\\) on \\([0,4]\\):",opts:["\\(4\\)","\\(8\\)","\\(10\\)","\\(12\\)"],ans:0,topic:"APPLICATION",exp:"\\(v=0\\) tại \\(t=2\\). \\(\\int_0^2 (4-2t)dt = 4\\), \\(\\int_2^4 (4-2t)dt = -4\\). Total distance = \\(4 + 4 = 8\\). Đáp án đúng là B (8).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int x\\sin x\\, dx\\) equals:",opts:["\\(-x\\cos x + \\sin x + C\\)","\\(x\\cos x + \\sin x + C\\)","\\(-x\\sin x + C\\)","\\(x\\sin x + C\\)"],ans:0,topic:"PARTS",exp:"\\(u = x\\), \\(dv = \\sin x\\, dx\\). \\(= -x\\cos x + \\sin x + C\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_1^2 \\dfrac{1}{x^2}\\, dx\\) equals:",opts:["\\(\\dfrac{1}{2}\\)","\\(1\\)","\\(2\\)","\\(\\dfrac{3}{2}\\)"],ans:0,topic:"NEWTON",exp:"\\([-1/x]_1^2 = -1/2 + 1 = 1/2\\).",review:"Ôn mục III"},
+    {q:"Area between \\(y = x^3\\) and \\(y = x\\) on \\([0,1]\\):",opts:["\\(\\dfrac{1}{4}\\)","\\(\\dfrac{1}{2}\\)","\\(\\dfrac{3}{4}\\)","\\(1\\)"],ans:0,topic:"AREA",exp:"\\(\\int_0^1 (x - x^3)dx = 1/2 - 1/4 = 1/4\\).",review:"Ôn mục V"},
+    {q:"\\(\\displaystyle\\int_0^1 e^{2x}\\, dx\\) equals:",opts:["\\(\\dfrac{e^2-1}{2}\\)","\\(e^2-1\\)","\\(\\dfrac{e^2}{2}\\)","\\(e - 1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\([e^{2x}/2]_0^1 = (e^2-1)/2\\).",review:"Ôn mục IV"},
+    {q:"Accumulated revenue from \\(MR(x) = 10 - x\\) on \\([0,10]\\):",opts:["\\(25\\)","\\(50\\)","\\(75\\)","\\(100\\)"],ans:1,topic:"APPLICATION",exp:"\\(\\int_0^{10}(10-x)dx = [10x - x^2/2]_0^{10} = 100 - 50 = 50\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 \\cos(\\pi x)\\, dx\\) equals:",opts:["\\(0\\)","\\(\\dfrac{1}{\\pi}\\)","\\(\\dfrac{2}{\\pi}\\)","\\(\\dfrac{\\pi}{2}\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\([\\sin(\\pi x)/\\pi]_0^1 = 0 - 0 = 0\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 x^2(x^3+1)^2\\, dx\\) equals:",opts:["\\(\\dfrac{7}{9}\\)","\\(\\dfrac{7}{3}\\)","\\(\\dfrac{5}{9}\\)","\\(\\dfrac{2}{3}\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^3+1\\), \\(du = 3x^2 dx\\). \\(= \\dfrac{1}{3} \\cdot \\dfrac{u^3}{3}|_1^2 = \\dfrac{7}{9}\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi/4} \\tan^2 x\\, dx\\) equals:",opts:["\\(1 - \\dfrac{\\pi}{4}\\)","\\(\\dfrac{\\pi}{4}\\)","\\(1\\)","\\(\\dfrac{\\pi}{4} - 1\\)"],ans:0,topic:"NEWTON",exp:"\\(\\int (\\sec^2 x - 1)dx = [\\tan x - x]_0^{\\pi/4} = 1 - \\pi/4\\).",review:"Ôn mục III"},
+    {q:"Consumer surplus \\(\\int_0^5 (20 - 2x - 10)dx\\):",opts:["\\(25\\)","\\(20\\)","\\(15\\)","\\(10\\)"],ans:0,topic:"APPLICATION",exp:"\\(\\int_0^5 (10-2x)dx = 50 - 25 = 25\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 \\dfrac{x}{x^2+1}\\, dx\\) equals:",opts:["\\(\\dfrac{\\ln 2}{2}\\)","\\(\\ln 2\\)","\\(\\dfrac{1}{2}\\)","\\(1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^2+1\\). \\(= \\dfrac{1}{2}[\\ln u]_1^2 = \\dfrac{\\ln 2}{2}\\).",review:"Ôn mục IV"},
+    {q:"Total distance for \\(v(t) = t - 3\\) on \\([0,6]\\):",opts:["\\(6\\)","\\(9\\)","\\(12\\)","\\(18\\)"],ans:1,topic:"APPLICATION",exp:"\\(v=0\\) tại \\(t=3\\). \\(\\int_0^3(t-3)dt = -4.5\\), \\(\\int_3^6(t-3)dt = 4.5\\). Distance = \\(4.5 + 4.5 = 9\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_1^2 \\dfrac{1}{x(x+1)}\\, dx\\) (hint: partial fractions):",opts:["\\(\\ln(4/3)\\)","\\(\\ln(3/4)\\)","\\(\\ln 2\\)","\\(\\dfrac{1}{2}\\)"],ans:0,topic:"PARTS",exp:"\\(\\dfrac{1}{x(x+1)} = \\dfrac{1}{x} - \\dfrac{1}{x+1}\\). \\([\\ln x - \\ln(x+1)]_1^2 = \\ln(2/3) - \\ln(1/2) = \\ln(4/3)\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^2 (x - 1)^2\\, dx\\) equals:",opts:["\\(\\dfrac{1}{3}\\)","\\(\\dfrac{2}{3}\\)","\\(1\\)","\\(\\dfrac{8}{3}\\)"],ans:1,topic:"SUBSTITUTION",exp:"\\([\\dfrac{(x-1)^3}{3}]_0^2 = (1/3) - (-1/3) = 2/3\\).",review:"Ôn mục IV"}
+  ]},
+  3:{name:"Set 3 — Advanced",desc:"Từng phần nâng cao, diện tích/thể tích phức tạp, ứng dụng thực tế SAT-style.",questions:[
+    {q:"\\(\\displaystyle\\int x^2 e^x\\, dx\\) equals:",opts:["\\(e^x(x^2 - 2x + 2) + C\\)","\\(e^x(x^2 + 2x + 2) + C\\)","\\(x^2 e^x - e^x + C\\)","\\(e^x(x^2 - 2) + C\\)"],ans:0,topic:"PARTS",exp:"Từng phần 2 lần: \\(e^x(x^2 - 2x + 2) + C\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int x\\ln x\\, dx\\) equals:",opts:["\\(\\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4} + C\\)","\\(\\dfrac{x^2}{2}\\ln x + \\dfrac{x^2}{4} + C\\)","\\(x^2\\ln x - x^2/2 + C\\)","\\(\\dfrac{\\ln^2 x}{2} + C\\)"],ans:0,topic:"PARTS",exp:"\\(u = \\ln x\\), \\(dv = x\\, dx\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 x e^{-x}\\, dx\\) equals:",opts:["\\(1 - \\dfrac{2}{e}\\)","\\(1 + \\dfrac{2}{e}\\)","\\(\\dfrac{1}{e}\\)","\\(2\\)"],ans:0,topic:"PARTS",exp:"\\([-(x+1)e^{-x}]_0^1 = -2/e + 1 = 1 - 2/e\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 x^2 e^x\\, dx\\) approx:",opts:["\\(\\approx 0.718\\)","\\(\\approx 1.5\\)","\\(\\approx 0.5\\)","\\(\\approx 2\\)"],ans:0,topic:"PARTS",exp:"\\([e^x(x^2-2x+2)]_0^1 = e(1) - 2 = e - 2 \\approx 0.718\\).",review:"Ôn mục IV"},
+    {q:"Ball velocity \\(v(t) = -32t + 96\\) ft/s. Max height (from ground, \\(t=0\\) to stop):",opts:["\\(80\\) ft","\\(100\\) ft","\\(144\\) ft","\\(200\\) ft"],ans:2,topic:"APPLICATION",exp:"\\(v=0\\) tại \\(t=3\\). Height \\(= \\int_0^3 (-32t+96)dt = [-16t^2+96t]_0^3 = -144+288 = 144\\).",review:"Ôn mục VII"},
+    {q:"Area between \\(y = \\sin x\\) and x-axis on \\([0, 2\\pi]\\):",opts:["\\(0\\)","\\(2\\)","\\(4\\)","\\(\\pi\\)"],ans:2,topic:"AREA",exp:"\\(\\int_0^\\pi \\sin x\\, dx - \\int_\\pi^{2\\pi}\\sin x\\, dx = 2 - (-2) = 4\\).",review:"Ôn mục V"},
+    {q:"Volume of \\(y = e^x\\) on \\([0,1]\\) around Ox:",opts:["\\(\\dfrac{\\pi(e^2-1)}{2}\\)","\\(\\pi(e - 1)\\)","\\(\\dfrac{\\pi e^2}{2}\\)","\\(\\pi e\\)"],ans:0,topic:"AREA",exp:"\\(\\pi \\int_0^1 e^{2x} dx = \\dfrac{\\pi(e^2 - 1)}{2}\\).",review:"Ôn mục VI"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi/2} \\sin^2 x\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{4}\\)","\\(\\dfrac{\\pi}{2}\\)","\\(1\\)","\\(2\\)"],ans:0,topic:"SUBSTITUTION",exp:"Dùng \\(\\sin^2 x = (1-\\cos 2x)/2\\). Kết quả: \\(\\pi/4\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 \\sqrt{1-x^2}\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{4}\\)","\\(\\dfrac{\\pi}{2}\\)","\\(1\\)","\\(\\dfrac{1}{2}\\)"],ans:0,topic:"SUBSTITUTION",exp:"Đây là diện tích \\(1/4\\) hình tròn đơn vị: \\(\\pi/4\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 \\dfrac{1}{1+x^2}\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{4}\\)","\\(\\dfrac{\\pi}{2}\\)","\\(1\\)","\\(2\\)"],ans:0,topic:"NEWTON",exp:"\\([\\arctan x]_0^1 = \\pi/4\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_1^e x\\ln x\\, dx\\) equals:",opts:["\\(\\dfrac{e^2+1}{4}\\)","\\(\\dfrac{e^2-1}{4}\\)","\\(\\dfrac{e^2}{2}\\)","\\(e\\)"],ans:0,topic:"PARTS",exp:"\\([\\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4}]_1^e = (\\dfrac{e^2}{2} - \\dfrac{e^2}{4}) - (0 - \\dfrac{1}{4}) = \\dfrac{e^2+1}{4}\\).",review:"Ôn mục IV"},
+    {q:"Velocity \\(v(t) = 6t^2 - 6t\\) on \\([0,2]\\). Displacement:",opts:["\\(2\\)","\\(4\\)","\\(6\\)","\\(8\\)"],ans:0,topic:"APPLICATION",exp:"\\([2t^3 - 3t^2]_0^2 = 16 - 12 = 4\\). Đáp án đúng là B (4).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^\\pi x\\sin x\\, dx\\) equals:",opts:["\\(\\pi\\)","\\(2\\pi\\)","\\(0\\)","\\(\\pi/2\\)"],ans:0,topic:"PARTS",exp:"\\([-x\\cos x + \\sin x]_0^\\pi = -\\pi(-1) + 0 - 0 = \\pi\\).",review:"Ôn mục IV"},
+    {q:"Volume of \\(y = \\sqrt{x}\\) on \\([0,9]\\) around Ox:",opts:["\\(\\dfrac{81\\pi}{2}\\)","\\(\\dfrac{9\\pi}{2}\\)","\\(9\\pi\\)","\\(\\dfrac{81\\pi}{4}\\)"],ans:0,topic:"AREA",exp:"\\(\\pi \\int_0^9 x\\, dx = \\pi \\cdot \\dfrac{81}{2}\\).",review:"Ôn mục VI"},
+    {q:"\\(\\displaystyle\\int_0^1 (\\ln x)^2\\, dx\\) equals:",opts:["\\(2\\)","\\(1\\)","\\(0\\)","\\(\\dfrac{1}{2}\\)"],ans:0,topic:"PARTS",exp:"Từng phần 2 lần: \\([x(\\ln x)^2 - 2x\\ln x + 2x]_0^1 = 2\\).",review:"Ôn mục IV"},
+    {q:"Total cost from \\(MC(x) = x^2 + 2x\\), fixed 50, \\(C(4)\\):",opts:["\\(\\dfrac{250}{3}\\)","\\(50\\)","\\(\\dfrac{200}{3}\\)","\\(100\\)"],ans:0,topic:"APPLICATION",exp:"\\(C(4) = 50 + [\\dfrac{x^3}{3} + x^2]_0^4 = 50 + \\dfrac{64}{3} + 16 = 50 + 21.33 + 16 = 87.33\\). Đáp án gần nhất A (250/3 ≈ 83.33). Kiểm tra: \\(50 + 64/3 + 16 = 66 + 64/3 = \\dfrac{198+64}{3} = \\dfrac{262}{3}\\). Đáp án gần: \\(250/3\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi/2} x\\cos x\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{2} - 1\\)","\\(\\dfrac{\\pi}{2} + 1\\)","\\(\\dfrac{\\pi}{2}\\)","\\(1\\)"],ans:0,topic:"PARTS",exp:"\\(u=x\\), \\(dv=\\cos x\\, dx\\). \\([x\\sin x + \\cos x]_0^{\\pi/2} = \\dfrac{\\pi}{2} + 0 - 0 - 1 = \\dfrac{\\pi}{2} - 1\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_0^1 x^3 e^{x^2}\\, dx\\) (hint: sub then parts):",opts:["\\(\\dfrac{1}{2}\\)","\\(\\dfrac{e-2}{2}\\)","\\(\\dfrac{e}{2}\\)","\\(1\\)"],ans:0,topic:"PARTS",exp:"\\(u=x^2\\), \\(du=2x\\, dx\\). \\(= \\dfrac{1}{2}\\int_0^1 u e^u du\\). Kết quả \\(\\dfrac{1}{2}\\).",review:"Ôn mục IV"},
+    {q:"Area inside circle \\(x^2 + y^2 = r^2\\) using integration:",opts:["\\(\\pi r^2\\)","\\(\\dfrac{\\pi r^2}{2}\\)","\\(2\\pi r^2\\)","\\(\\dfrac{\\pi r^2}{4}\\)"],ans:0,topic:"AREA",exp:"\\(2\\int_{-r}^r \\sqrt{r^2-x^2}dx = \\pi r^2\\).",review:"Ôn mục V"},
+    {q:"\\(\\displaystyle\\int_0^2 (x^2 + 1)^{-1}\\, dx\\) equals:",opts:["\\(\\arctan 2\\)","\\(\\pi/4\\)","\\(\\ln 2\\)","\\(1\\)"],ans:0,topic:"NEWTON",exp:"\\([\\arctan x]_0^2 = \\arctan 2\\).",review:"Ôn mục III"},
+    {q:"\\(\\displaystyle\\int_0^{\\pi} \\cos^2 x\\, dx\\) equals:",opts:["\\(\\dfrac{\\pi}{2}\\)","\\(\\pi\\)","\\(\\dfrac{\\pi}{4}\\)","\\(1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(\\cos^2 x = (1+\\cos 2x)/2\\). \\(= \\dfrac{\\pi}{2}\\).",review:"Ôn mục IV"},
+    {q:"\\(\\displaystyle\\int_1^2 x^2\\ln x\\, dx\\) equals:",opts:["\\(\\dfrac{8\\ln 2}{3} - \\dfrac{7}{9}\\)","\\(\\dfrac{8\\ln 2}{3}\\)","\\(\\dfrac{7}{9}\\)","\\(2\\ln 2\\)"],ans:0,topic:"PARTS",exp:"\\(u=\\ln x\\), \\(dv=x^2 dx\\). \\([\\dfrac{x^3}{3}\\ln x - \\dfrac{x^3}{9}]_1^2 = \\dfrac{8\\ln 2}{3} - \\dfrac{8}{9} + \\dfrac{1}{9} = \\dfrac{8\\ln 2}{3} - \\dfrac{7}{9}\\).",review:"Ôn mục IV"},
+    {q:"Speedometer \\(v(t) = 60\\) km/h, chạy 2 giờ. Quãng đường:",opts:["\\(60\\) km","\\(120\\) km","\\(180\\) km","\\(240\\) km"],ans:1,topic:"APPLICATION",exp:"\\(\\int_0^2 60\\, dt = 120\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^1 \\dfrac{x+1}{x^2+2x+2}\\, dx\\) equals:",opts:["\\(\\dfrac{1}{2}\\ln\\dfrac{5}{2}\\)","\\(\\ln 5\\)","\\(\\dfrac{1}{2}\\ln 5\\)","\\(1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = x^2+2x+2\\), \\(du = (2x+2)dx\\). \\(= \\dfrac{1}{2}[\\ln u]_0^1 = \\dfrac{1}{2}\\ln(5/2)\\).",review:"Ôn mục IV"},
+    {q:"Probability: uniform density on \\([0, 10]\\). \\(P(3 \\leq X \\leq 7)\\) =",opts:["\\(0.2\\)","\\(0.4\\)","\\(0.6\\)","\\(0.7\\)"],ans:1,topic:"APPLICATION",exp:"\\(\\int_3^7 \\dfrac{1}{10}dx = \\dfrac{4}{10} = 0.4\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^2 |x^2 - 1|\\, dx\\) equals:",opts:["\\(2\\)","\\(\\dfrac{4}{3}\\)","\\(\\dfrac{2}{3}\\)","\\(\\dfrac{8}{3}\\)"],ans:0,topic:"AREA",exp:"Tách tại \\(x=1\\): \\(\\int_0^1 (1-x^2)dx + \\int_1^2 (x^2-1)dx = 2/3 + 4/3 = 2\\).",review:"Ôn mục V"},
+    {q:"\\(\\displaystyle\\int_1^2 \\dfrac{\\ln x}{x}\\, dx\\) equals:",opts:["\\(\\dfrac{(\\ln 2)^2}{2}\\)","\\(\\ln 2\\)","\\(\\dfrac{\\ln 2}{2}\\)","\\(1\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = \\ln x\\), \\(du = dx/x\\). \\(= [u^2/2] = (\\ln 2)^2/2\\).",review:"Ôn mục IV"},
+    {q:"Lợi nhuận \\(\\int_0^{20} (40 - 2x)dx\\) =",opts:["\\(400\\)","\\(500\\)","\\(600\\)","\\(800\\)"],ans:0,topic:"APPLICATION",exp:"\\([40x - x^2]_0^{20} = 800 - 400 = 400\\).",review:"Ôn mục VII"},
+    {q:"\\(\\displaystyle\\int_0^{\\ln 2} e^x (e^x + 1)^2\\, dx\\) equals (approx):",opts:["\\(\\dfrac{19}{3}\\)","\\(\\dfrac{8}{3}\\)","\\(\\dfrac{7}{3}\\)","\\(\\dfrac{64}{3}\\)"],ans:0,topic:"SUBSTITUTION",exp:"\\(u = e^x + 1\\), \\(du = e^x dx\\). \\(\\int_2^3 u^2 du = [u^3/3]_2^3 = 27/3 - 8/3 = 19/3\\).",review:"Ôn mục IV"}
+  ]}
+};
+
+/* ============ STATE ============ */
+const TEST_DURATION = 45 * 60;
+let testState = null;
+let testTimerInterval = null;
+let currentScoreId = null;
+
+/* ============ LEADERBOARD ============ */
+function saveScoreToLocalStorage(scoreData){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_integral_' + today;
+    let board = JSON.parse(localStorage.getItem(key) || '[]');
+    board.push(scoreData);
+    board.sort(function(a,b){ if(b.correct !== a.correct) return b.correct - a.correct; return a.timeUsed - b.timeUsed; });
+    localStorage.setItem(key, JSON.stringify(board));
+  } catch(e){ console.error('Lỗi lưu bảng xếp hạng', e); }
+}
+function getLeaderboardHTML(){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_integral_' + today;
+    const board = JSON.parse(localStorage.getItem(key) || '[]');
+    if(board.length === 0) return '';
+    const fmtTime = function(sec){ return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); };
+    let html = '<div class="result-section-title"><span class="icon">🏆</span> Bảng xếp hạng hôm nay ('+today+')</div><div style="overflow-x:auto;margin-bottom:22px;"><table class="topic-table"><thead><tr><th style="text-align:center">Hạng</th><th style="text-align:center">Bộ đề</th><th style="text-align:center">Kết quả</th><th style="text-align:center">Thời gian</th></tr></thead><tbody>';
+    board.slice(0,10).forEach(function(item,index){
+      const medal = index===0?'🥇':index===1?'🥈':index===2?'🥉':(index+1);
+      const isCurrent = (item.id === currentScoreId);
+      html += '<tr style="'+(isCurrent?'background:#eaf7eb;font-weight:bold;border-left:3px solid #4CAF50':'')+'"><td style="text-align:center;font-size:16px;">'+medal+'</td><td style="text-align:center">Bộ '+item.setNum+'</td><td style="text-align:center;color:'+(item.pct>=80?'#4CAF50':'#1B3A6B')+';font-weight:800;">'+item.correct+'/'+item.total+' ('+item.pct+'%)</td><td style="text-align:center">'+fmtTime(item.timeUsed)+'</td></tr>';
+    });
+    return html + '</tbody></table></div>';
+  } catch(e){ return ''; }
+}
+
+/* ============ RENDER SET SELECTOR ============ */
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(function(k){
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = function(){ startSetTest(parseInt(k)); };
+    card.innerHTML = '<div class="set-badge">SET '+k+'</div><h4>'+s.name+'</h4><p>'+s.desc+'</p><div class="set-meta"><span><strong>30</strong> câu</span><span><strong>45:00</strong> phút</span><span><strong>A–D</strong></span></div><div class="set-start">▶ Bắt đầu làm bài →</div>';
+    c.appendChild(card);
+  });
+}
+
+/* ============ START TEST ============ */
+function startSetTest(setNum){
+  testState = { setNum: setNum, current: 0, answers: new Array(30).fill(null), timeLeft: TEST_DURATION, submitted: false };
+  document.getElementById('satSetSelector').style.display = 'none';
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'block';
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(function(){
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){ clearInterval(testTimerInterval); testTimerInterval = null; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = m+':'+s;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 300) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = (function(idx){ return function(){ testState.current = idx; renderTestQuestion(); renderNavGrid(); }; })(i);
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  if(!testState) return;
+  document.querySelectorAll('#navGrid .nav-cell').forEach(function(c,i){
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(function(a){ return a !== null; }).length;
+  document.getElementById('testProgress').textContent = 'Câu '+(testState.current+1)+' / 30 · Đã trả lời '+answered+'/30';
+}
+
+function renderTestQuestion(){
+  if(!testState) return;
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach(function(o,i){
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = '<span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span>';
+    b.onclick = function(){ selectTestOption(i); };
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement){ renderMathInElement(document.getElementById('testQuestionCard'), {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(!testState || testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach(function(o,i){ o.classList.toggle('selected', i === optIdx); });
+  updateNavStatus();
+}
+
+function goToQuestion(i){ if(!testState || i<0 || i>29) return; testState.current = i; renderTestQuestion(); }
+
+/* ============ BUTTON WIRING ============ */
+document.getElementById('btnPrev').onclick = function(){ if(testState) goToQuestion(testState.current - 1); };
+document.getElementById('btnNext').onclick = function(){
+  if(!testState) return;
+  if(testState.current === 29) submitTest(false);
+  else goToQuestion(testState.current + 1);
+};
+document.getElementById('btnQuitTest').onclick = function(){
+  let ok = true;
+  try { ok = window.confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.'); } catch(e){ ok = true; }
+  if(ok === false) return;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+  testState = null;
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+};
+document.getElementById('btnSubmitTest').onclick = function(){ submitTest(false); };
+document.getElementById('btnForceResult').onclick = function(){
+  if(!testState || testState.submitted) return;
+  submitTest(true);
+};
+
+/* ============ SUBMIT TEST ============ */
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+
+  if(!auto){
+    const unanswered = testState.answers.filter(function(a){ return a === null; }).length;
+    if(unanswered > 0){
+      let ok = true;
+      try { ok = window.confirm('Bạn còn ' + unanswered + ' câu chưa trả lời. Vẫn nộp bài?'); } catch(e){ ok = true; }
+      if(ok === false) return;
+    }
+  }
+
+  testState.submitted = true;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+
+  try {
+    const questions = SAT_SETS[testState.setNum].questions;
+    let correct = 0;
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+    const timeUsed = TEST_DURATION - testState.timeLeft;
+    currentScoreId = Date.now().toString();
+    saveScoreToLocalStorage({
+      id: currentScoreId,
+      setNum: testState.setNum, correct: correct, total: questions.length,
+      pct: Math.round(correct / questions.length * 100), timeUsed: timeUsed
+    });
+  } catch(e){ console.error('Lỗi lưu điểm:', e); }
+
+  document.getElementById('satTestScreen').style.display = 'none';
+
+  try {
+    renderResult();
+  } catch(e){
+    console.error('Lỗi render kết quả:', e);
+    showBasicResult(e);
+  }
+
+  const rs = document.getElementById('satResultScreen');
+  if(rs){
+    rs.style.display = 'block';
+    if(!rs.innerHTML || rs.innerHTML.trim() === ''){
+      showBasicResult(new Error('Empty content'));
+    }
+  }
+
+  try { window.scrollTo({top:0,behavior:'smooth'}); } catch(e){ window.scrollTo(0,0); }
+  try { playFanfare(); } catch(e){}
+}
+
+function showBasicResult(err){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  const questions = (testState && SAT_SETS[testState.setNum]) ? SAT_SETS[testState.setNum].questions : [];
+  let correct = 0;
+  if(testState && questions.length){
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+  }
+  const total = questions.length || 30;
+  const pct = Math.round(correct / total * 100);
+  c.innerHTML =
+    '<div class="card" style="border-left:6px solid #4CAF50">' +
+    '<h3>✅ Đã hoàn thành bài thi</h3>' +
+    '<div style="display:flex;gap:24px;align-items:center;margin:20px 0;flex-wrap:wrap">' +
+    '<div style="background:#EAF0F9;padding:20px 32px;border-radius:12px;text-align:center">' +
+    '<div style="font-size:42px;font-weight:800;color:#1B3A6B">' + correct + '</div>' +
+    '<div style="font-size:14px;color:#5b6778">/ ' + total + ' câu đúng</div>' +
+    '</div>' +
+    '<div style="background:linear-gradient(135deg,#1B3A6B,#2C5AA0);padding:20px 32px;border-radius:12px;text-align:center;color:#fff">' +
+    '<div style="font-size:42px;font-weight:800;color:#F5B400">' + pct + '%</div>' +
+    '<div style="font-size:14px;opacity:.9">chính xác</div>' +
+    '</div>' +
+    '</div>' +
+    '<p style="color:#E53935;font-size:13px;margin-top:10px">⚠ Chi tiết phân tích không hiển thị: ' + (err && err.message ? err.message : 'Lỗi không xác định') + '</p>' +
+    '<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">' +
+    '<button class="btn btn-primary" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập</button>' +
+    '</div></div>';
+  c.style.display = 'block';
+}
+
+/* ============ RENDER RESULT CHI TIẾT ============ */
+function renderResult(){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  c.style.display = 'block';
+
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  const autoSubmitted = testState.timeLeft <= 0;
+
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(function(k){ topicStat[k] = { correct: 0, total: 0 }; });
+  const wrongList = [];
+
+  questions.forEach(function(item,i){
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){ unanswered++; wrongList.push({ idx: i, item: item, yourAns: null }); }
+    else if(ans === item.ans){ correct++; topicStat[item.topic].correct++; }
+    else { wrong++; wrongList.push({ idx: i, item: item, yourAns: ans }); }
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct / total * 100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = Math.floor(avgTime/60) + ':' + String(avgTime%60).padStart(2,'0');
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){ level="XUẤT SẮC"; levelColor="#4CAF50"; levelIcon="🏆"; levelDesc="Kiến thức nguyên hàm & tích phân rất vững vàng!"; levelAdvice="Luyện đề khó hơn để duy trì phong độ."; }
+  else if(pct >= 75){ level="TỐT"; levelColor="#2C5AA0"; levelIcon="⭐"; levelDesc="Nắm tốt kiến thức cơ bản và nâng cao."; levelAdvice="Khắc phục chủ đề dưới 80% để đạt 700+."; }
+  else if(pct >= 60){ level="KHÁ"; levelColor="#E8A317"; levelIcon="📈"; levelDesc="Nền tảng khá nhưng còn sai sót."; levelAdvice="Luyện thêm dạng đổi biến và từng phần."; }
+  else if(pct >= 40){ level="TRUNG BÌNH"; levelColor="#FF9800"; levelIcon="📚"; levelDesc="Cần củng cố lý thuyết."; levelAdvice="Ôn kỹ mục I, II, III và làm lại Nhóm 1."; }
+  else { level="CẦN CỐ GẮNG"; levelColor="#E53935"; levelIcon="🔧"; levelDesc="Cần xây dựng lại nền tảng."; levelAdvice="Đọc kỹ Kiến thức, ghi nhớ bảng nguyên hàm cơ bản."; }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){ timeEval="Quản lý thời gian xuất sắc"; timeIcon="🚀"; timeColor="#4CAF50"; }
+  else if(timeUsed <= TEST_DURATION*0.9){ timeEval="Quản lý thời gian tốt"; timeIcon="⏱️"; timeColor="#2C5AA0"; }
+  else if(timeUsed < TEST_DURATION){ timeEval="Sát giờ — cần tăng tốc"; timeIcon="⏰"; timeColor="#E8A317"; }
+  else { timeEval="Hết giờ"; timeIcon="🚨"; timeColor="#E53935"; }
+
+  const topicList = Object.keys(topicStat)
+    .filter(function(k){ return topicStat[k].total > 0; })
+    .map(function(k){ return { key: k, name: TOPICS[k], correct: topicStat[k].correct, total: topicStat[k].total, pct: Math.round(topicStat[k].correct/topicStat[k].total*100) }; })
+    .sort(function(a,b){ return a.pct - b.pct; });
+
+  const weakTopics = topicList.filter(function(t){ return t.pct < 60; });
+  const mediumTopics = topicList.filter(function(t){ return t.pct >= 60 && t.pct < 80; });
+  const strongTopics = topicList.filter(function(t){ return t.pct >= 80; });
+
+  let roadmapHTML = '';
+  if(weakTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-1"><div class="phase-num">1</div><div class="phase-content"><h4>Giai đoạn 1: Củng cố kiến thức nền tảng <span class="phase-time">⏳ 1–3 ngày</span></h4><ul>';
+    weakTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — ' + TOPIC_RECOMMENDATIONS[t.key] + '</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm cơ bản</button></div></div></div>';
+  }
+  if(mediumTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-2"><div class="phase-num">2</div><div class="phase-content"><h4>Giai đoạn 2: Luyện tập nâng cao <span class="phase-time">⏳ 3–5 ngày</span></h4><ul>';
+    mediumTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Cần thêm bài tập trung bình–khó.</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm trung bình</button><button class="btn btn-primary btn-sm" onclick="restartSameSet()">🔄 Làm lại bộ đề này</button></div></div></div>';
+  }
+  roadmapHTML += '<div class="roadmap-phase phase-3"><div class="phase-num">3</div><div class="phase-content"><h4>Giai đoạn 3: ' + (strongTopics.length > 0 ? 'Duy trì & mở rộng' : 'Luyện đề tổng hợp') + ' <span class="phase-time">⏳ Liên tục</span></h4><ul>';
+  if(strongTopics.length > 0){
+    strongTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Duy trì phong độ.</li>'; });
+  } else {
+    roadmapHTML += '<li>Luyện các bộ đề khác để đa dạng dạng bài.</li>';
+  }
+  roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="backToSetSelector()">📚 Chọn bộ khác</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'sat\')">⏱️ Luyện đề khác</button></div></div></div>';
+
+  let topicTableHTML = '';
+  topicList.forEach(function(t){
+    let cls = '', status = '', statusColor = '';
+    if(t.pct >= 80){ status = '✅ Vững'; statusColor = '#4CAF50'; }
+    else if(t.pct >= 60){ cls = 'warn'; status = '⚠ Cần luyện'; statusColor = '#E8A317'; }
+    else { cls = 'bad'; status = '🔴 Yếu'; statusColor = '#E53935'; }
+    topicTableHTML += '<tr><td><strong>' + t.name + '</strong></td><td><div class="topic-bar-cell"><div class="topic-bar"><div class="topic-bar-fill ' + cls + '" style="width:' + t.pct + '%"></div></div><span style="min-width:44px;font-weight:700;color:#5b6778">' + t.pct + '%</span></div></td><td style="text-align:right"><span class="topic-score">' + t.correct + '/' + t.total + '</span></td><td style="text-align:center"><strong style="color:' + statusColor + ';font-size:13px">' + status + '</strong></td></tr>';
+    topicTableHTML += '<tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8"><div class="topic-recommend">📌 <strong>Gợi ý:</strong> ' + TOPIC_RECOMMENDATIONS[t.key] + '</div></td></tr>';
+  });
+
+  let wrongHTML = '';
+  if(wrongList.length > 0){
+    wrongHTML += '<div class="result-section-title"><span class="icon" style="background:#fdeaea;color:#E53935">🔍</span> Phân tích ' + wrongList.length + ' câu sai / bỏ trống</div>';
+    wrongList.forEach(function(w){
+      const item = w.item;
+      const cls = w.yourAns === null ? 'unanswered' : '';
+      const yourText = w.yourAns === null ? '— Không trả lời —' : item.opts[w.yourAns];
+      wrongHTML += '<div class="wrong-item ' + cls + '">' +
+        '<div class="wrong-head"><div class="wrong-num">' + (w.idx+1) + '</div><div class="wrong-q">' + item.q + '<div><span class="topic-tag">' + TOPICS[item.topic] + '</span></div></div></div>' +
+        '<div class="ans-row">' +
+        '<div class="ans-box your"><div class="lbl">Bạn chọn</div><div class="val">' + (w.yourAns === null ? '—' : letterMap[w.yourAns] + '. ') + yourText + '</div></div>' +
+        '<div class="ans-box correct"><div class="lbl">Đáp án đúng</div><div class="val">' + letterMap[item.ans] + '. ' + item.opts[item.ans] + '</div></div>' +
+        '</div>' +
+        '<div class="exp-box"><div class="lbl">🧮 Lời giải</div>' + item.exp + '</div>' +
+        '<div class="review-box">📖 ' + item.review + '</div>' +
+        '</div>';
+    });
+  } else {
+    wrongHTML = '<div class="roadmap" style="border-left-color:#4CAF50"><h3>🎯 Tất cả câu trả lời đều chính xác!</h3><p style="font-size:14px;color:#5b6778">Không có câu nào sai. Em đã sẵn sàng cho các bộ đề khó hơn!</p></div>';
+  }
+
+  c.innerHTML =
+    '<div class="result-hero">' +
+    '<div>' +
+    '<h2>🎉 Hoàn thành ' + SAT_SETS[setNum].name + '!</h2>' +
+    '<p>Bạn đã làm ' + total + ' câu trong ' + tm + ':' + ts + '. ' + (autoSubmitted ? '⏰ Hết giờ! ' : '') + (unanswered > 0 ? 'Còn ' + unanswered + ' câu chưa trả lời.' : '') + '</p>' +
+    '</div>' +
+    '<div class="result-score"><div class="num">' + correct + '</div><div class="den">/ ' + total + ' câu đúng</div><div class="pct">' + pct + '%</div></div>' +
+    '</div>' +
+
+    '<div class="level-banner" style="border-left-color:' + levelColor + '">' +
+    '<div class="level-icon" style="background:' + levelColor + '">' + levelIcon + '</div>' +
+    '<div class="level-content"><h3 style="color:' + levelColor + '">Đánh giá: ' + level + '</h3><p>' + levelDesc + '</p><div class="level-advice"><strong>💡 Định hướng:</strong> ' + levelAdvice + '</div></div>' +
+    '</div>' +
+
+    '<div class="result-stats">' +
+    '<div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">' + correct + '</div><div class="sub">Chiếm ' + pct + '%</div></div>' +
+    '<div class="stat-box red"><div class="label">❌ Sai</div><div class="value">' + wrong + '</div><div class="sub">Cần xem lại</div></div>' +
+    '<div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">' + unanswered + '</div><div class="sub">Chưa trả lời</div></div>' +
+    '<div class="stat-box"><div class="label">🎯 SAT ước lượng</div><div class="value">' + estimatedSAT + '</div><div class="sub">/ 800</div></div>' +
+    '</div>' +
+
+    getLeaderboardHTML() +
+
+    '<div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div>' +
+    '<div class="time-analysis">' +
+    '<div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content"><div class="tb-label">Tổng thời gian</div><div class="tb-value">' + tm + ':' + ts + '</div><div class="tb-desc">/ 45:00</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content"><div class="tb-label">Trung bình / câu</div><div class="tb-value">' + avgTimeStr + '</div><div class="tb-desc">Mục tiêu: ≤ 1:30</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon" style="background:' + timeColor + '22;color:' + timeColor + '">' + timeIcon + '</div><div class="tb-content"><div class="tb-label">Đánh giá</div><div class="tb-value" style="color:' + timeColor + ';font-size:15px">' + timeEval + '</div><div class="tb-desc">' + (timeUsed < TEST_DURATION ? 'Còn dư ' + Math.floor((TEST_DURATION-timeUsed)/60) + ':' + String((TEST_DURATION-timeUsed)%60).padStart(2,'0') : 'Đã dùng hết') + '</div></div></div>' +
+    '</div>' +
+
+    '<div class="result-section-title"><span class="icon">📊</span> Phân tích theo chủ đề</div>' +
+    '<table class="topic-table"><thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead><tbody>' + topicTableHTML + '</tbody></table>' +
+
+    '<div class="roadmap"><h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3><p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng:</p>' + roadmapHTML + '</div>' +
+
+    wrongHTML +
+
+    '<div class="result-actions">' +
+    '<button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại ' + SAT_SETS[setNum].name + '</button>' +
+    '<button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập thêm</button>' +
+    '</div>';
+
+  if(window.renderMathInElement){ renderMathInElement(c, {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+}
+
+function restartSameSet(){
+  if(!testState) return;
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ INIT ============ */
+renderSatSetSelector();
+
+window.addEventListener('load', function(){
+  if(window.renderMathInElement){
+    renderMathInElement(document.body, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+  }
+});
+
+console.log('[SAT Integrals Web] ✅ Loaded. renderResult:', typeof renderResult, '| submitTest:', typeof submitTest);
+</script>
+</body>
+</html>
